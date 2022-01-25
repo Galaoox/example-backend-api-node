@@ -1,6 +1,7 @@
-const router = require('express').Router();
-const AuthRoutes = require('./auth.route');
+import { Router } from  'express';
+const router = Router();
+import foodRoutes from './food.route';
 
-router.use('/auth', AuthRoutes);
+router.use('/food', foodRoutes);
 
-module.exports = router;
+export default router;

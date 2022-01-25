@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/index.js"
+    "build": "babel index.js -d dist",
+    "start": "npm run build && node dist/index.js",
+    "dev": "nodemon --exec babel-node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,19 @@
   "homepage": "https://github.com/Galaoox/auth-backend-node-express#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^14.3.0",
     "express": "^4.17.1",
+    "mongoose": "^6.1.8",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "nodemon": "^2.0.6"
   }
 }
