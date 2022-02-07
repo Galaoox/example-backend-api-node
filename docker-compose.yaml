@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+    app:
+        image: example-backend-node
+        ports:
+            - 3000:3000
+        environment:
+            DB_HOST: mongodb://mongodb:27017/explicacion
+            PORT: 3000
+    
+    mongodb:
+        image: mongo:5.0.6-focal
+        volumes: 
+            - ~/example-backend/data:/data/db
+        
+    
